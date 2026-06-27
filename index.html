@@ -1,0 +1,715 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>温志豪 | 高级视觉设计师</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<nav class="nav">
+<div class="logo">WEN ZHIHAO</div>
+<div class="menu">
+<a data-target="0" class="active">首页</a>
+<a data-target="1">作品展示</a>
+<a data-target="2">关于我</a>
+<a data-target="3">工作经历</a>
+<a data-target="4">联系方式</a>
+</div>
+</nav>
+
+<div class="fullscreen-dots">
+    <div class="dot active" data-target="0"></div>
+    <div class="dot" data-target="1"></div>
+    <div class="dot" data-target="2"></div>
+    <div class="dot" data-target="3"></div>
+    <div class="dot" data-target="4"></div>
+</div>
+
+<div class="lightbox" id="globalLightbox">
+    <div class="lightbox-close" id="lightboxClose">&times;</div>
+    <div class="lightbox-nav-btn lightbox-prev" id="lightboxPrev">‹</div>
+    <div class="lightbox-nav-btn lightbox-next" id="lightboxNext">›</div>
+    <div class="lightbox-wrapper" id="lightboxWrapper">
+        <img src="" class="lightbox-img" id="lightboxImg" draggable="false">
+    </div>
+    <div class="lightbox-top-info" id="lightboxTopInfo">
+        <div class="lightbox-top-info-inner">
+            <span class="lightbox-category-tag" id="lightboxCategoryTag">三维渲染</span>
+        </div>
+    </div>
+    <div class="lightbox-counter-bar" id="lightboxCounterBar">
+        <span class="lightbox-counter" id="lightboxCounter">1 / 8</span>
+    </div>
+    <div class="lightbox-status-bar">
+        <div class="lightbox-scale-badge" id="lightboxScaleBadge">100%</div>
+    </div>
+    <div class="lightbox-tip">滚轮缩放 | 鼠标拖拽平移 | 双击重置</div>
+</div>
+
+<div class="category-modal" id="categoryModal">
+    <div class="cm-stage">
+        <div class="cm-nav-btn cm-prev" id="categoryModalPrev">‹</div>
+        <div class="cm-nav-btn cm-next" id="categoryModalNext">›</div>
+        
+        <div class="cm-panel">
+            <div class="cm-header">
+                <div class="cm-title-group">
+                    <span class="cm-title-bar"></span>
+                    <h3 class="cm-title" id="categoryModalTitle">类目作品</h3>
+                    <span class="cm-subtitle">全部画册全览</span>
+                </div>
+                <div class="cm-close" id="categoryModalClose">&times;</div>
+            </div>
+            <div class="cm-grid" id="categoryModalGrid"></div>
+        </div>
+    </div>
+</div>
+
+<div class="main-container" id="mainContainer">
+
+    <section class="section-page hero">
+        <div class="hero-center">
+            <div class="hero-top">DESIGN PORTFOLIO</div>
+            <h1>温志豪</h1>
+            <div class="hero-tag-container">
+                <div class="tag-left-column">
+                    <span class="main-job-title">高级视觉设计师</span>
+                    <span class="hero-team-leader">( 渲染组长 )</span>
+                </div>
+                <div class="tag-right-skills"> · 三维渲染 · AIGC创意</div>
+            </div>
+            <div class="hero-year">2018 — 2026</div>
+            <div class="hero-btn" id="exploreBtn">
+                <div>探索<br>作品<br>集</div>
+                <div class="arrow">↓</div>
+            </div>
+        </div>
+    </section>
+
+    <section id="works" class="section-page">
+        <h2 class="section-title">作品展示</h2>
+        <div class="works-scroll-wrapper" id="worksScroll">
+            <div class="works-layout">
+                <div class="filter-bar">
+                    <button class="filter-btn active" data-filter="3d" id="btn-3d">三维渲染</button>
+                    <button class="filter-btn" data-filter="aigc" id="btn-aigc">AIGC生成</button>
+                    <button class="filter-btn" data-filter="graphic" id="btn-graphic">平面作品</button>
+                    <button class="filter-btn" data-filter="detail" id="btn-detail">产品详情</button>
+                </div>
+                
+                <div class="gallery-wrapper" id="galleryWrapper">
+                    <div class="gallery" id="worksGallery">
+                        <div class="card" data-category="3d"><img src="images/3d/render-01.jpg"></div>
+                        <div class="card" data-category="3d"><img src="images/3d/render-02.jpg"></div>
+                        <div class="card" data-category="3d"><img src="images/3d/render-03.jpg"></div>
+                        <div class="card" data-category="3d"><img src="images/3d/render-04.jpg"></div>
+                        <div class="card" data-category="3d"><img src="images/3d/render-05.jpg"></div>
+                        <div class="card" data-category="3d"><img src="images/3d/render-06.jpg"></div>
+                        <div class="card" data-category="3d"><img src="images/3d/render-07.jpg"></div>
+                        <div class="card" data-category="3d"><img src="images/3d/render-08.jpg"></div>
+                        <div class="card" data-category="3d"><img src="images/3d/render-09.jpg"></div>
+                        <div class="card" data-category="3d"><img src="images/3d/render-10.jpg"></div>
+                        <div class="card" data-category="3d"><img src="images/3d/render-11.jpg"></div>
+                        <div class="card" data-category="3d"><img src="images/3d/render-12.jpg"></div>
+                        <div class="card" data-category="3d"><img src="images/3d/render-13.jpg"></div>
+                        <div class="card" data-category="3d"><img src="images/3d/render-14.jpg"></div>
+                        <div class="card" data-category="3d"><img src="images/3d/render-15.jpg"></div>
+                        <div class="card" data-category="3d"><img src="images/3d/render-16.jpg"></div>
+                        <div class="card" data-category="3d"><img src="images/3d/render-17.jpg"></div>
+                        <div class="card" data-category="3d"><img src="images/3d/render-18.jpg"></div>
+                        <div class="card" data-category="3d"><img src="images/3d/render-19.jpg"></div>
+                        <div class="card" data-category="3d"><img src="images/3d/render-20.jpg"></div>
+                        <div class="card" data-category="3d"><img src="images/3d/render-21.jpg"></div>
+                        <div class="card" data-category="3d"><img src="images/3d/render-22.jpg"></div>
+                        <div class="card" data-category="3d"><img src="images/3d/render-23.jpg"></div>
+                        <div class="card" data-category="3d"><img src="images/3d/render-24.jpg"></div>
+                        <div class="card" data-category="3d"><img src="images/3d/render-25.jpg"></div>
+                        <div class="card" data-category="3d"><img src="images/3d/render-26.jpg"></div>
+                        <div class="card" data-category="3d"><img src="images/3d/render-27.jpg"></div>
+                        <div class="card" data-category="3d"><img src="images/3d/render-28.jpg"></div>
+                        <div class="card" data-category="3d"><img src="images/3d/render-29.jpg"></div>
+                        <div class="card" data-category="3d"><img src="images/3d/render-30.jpg"></div>
+                        <div class="card" data-category="3d"><img src="images/3d/render-31.jpg"></div>
+                        <div class="card" data-category="3d"><img src="images/3d/render-32.jpg"></div>
+                        <div class="card" data-category="3d"><img src="images/3d/render-33.jpg"></div>
+                        <div class="card" data-category="3d"><img src="images/3d/render-34.jpg"></div>
+                        <div class="card" data-category="3d"><img src="images/3d/render-35.jpg"></div>
+                        <div class="card" data-category="3d"><img src="images/3d/render-36.jpg"></div>
+                        <div class="card" data-category="3d"><img src="images/3d/render-37.jpg"></div>
+                        <div class="card" data-category="3d"><img src="images/3d/render-38.jpg"></div>
+                        <div class="card" data-category="3d"><img src="images/3d/render-39.jpg"></div>
+                        <div class="card" data-category="3d"><img src="images/3d/render-40.jpg"></div>
+                        <div class="card" data-category="3d"><img src="images/3d/render-41.jpg"></div>
+                        <div class="card" data-category="3d"><img src="images/3d/render-42.jpg"></div>
+                        <div class="card" data-category="3d"><img src="images/3d/render-43.jpg"></div>
+                        <div class="card" data-category="3d"><img src="images/3d/render-44.jpg"></div>
+                        <div class="card" data-category="3d"><img src="images/3d/render-45.jpg"></div>
+                        <div class="card" data-category="3d"><img src="images/3d/render-46.jpg"></div>
+                        <div class="card" data-category="3d"><img src="images/3d/render-47.jpg"></div>
+                        <div class="card" data-category="3d"><img src="images/3d/render-48.jpg"></div>
+                        <div class="card" data-category="3d"><img src="images/3d/render-49.jpg"></div>
+                        <div class="card" data-category="3d"><img src="images/3d/render-50.jpg"></div>
+                        <div class="card" data-category="3d"><img src="images/3d/render-51.jpg"></div>
+                        <div class="card" data-category="3d"><img src="images/3d/render-52.jpg"></div>
+                        <div class="card" data-category="3d"><img src="images/3d/render-53.jpg"></div>
+                        <div class="card" data-category="3d"><img src="images/3d/render-54.jpg"></div>
+                        <div class="card" data-category="3d"><img src="images/3d/render-55.jpg"></div>
+                        <div class="card" data-category="3d"><img src="images/3d/render-56.jpg"></div>
+                        <div class="card" data-category="3d"><img src="images/3d/render-57.jpg"></div>
+                        <div class="card" data-category="3d"><img src="images/3d/render-58.jpg"></div>
+                        <div class="card" data-category="3d"><img src="images/3d/render-69.jpg"></div>
+                        <div class="card" data-category="3d"><img src="images/3d/render-70.jpg"></div>
+                        <div class="card" data-category="3d"><img src="images/3d/render-71.jpg"></div>
+
+                        <div class="card" data-category="aigc"><img src="images/aigc/aigc-01.jpg"></div>
+                        <div class="card" data-category="aigc"><img src="images/aigc/aigc-02.jpg"></div>
+                        <div class="card" data-category="aigc"><img src="images/aigc/aigc-03.jpg"></div>
+                        <div class="card" data-category="aigc"><img src="images/aigc/aigc-04.jpg"></div>
+                        <div class="card" data-category="aigc"><img src="images/aigc/aigc-05.jpg"></div>
+                        <div class="card" data-category="aigc"><img src="images/aigc/aigc-06.jpg"></div>
+                        <div class="card" data-category="aigc"><img src="images/aigc/aigc-07.jpg"></div>
+                        <div class="card" data-category="aigc"><img src="images/aigc/aigc-08.jpg"></div>
+                        <div class="card" data-category="aigc"><img src="images/aigc/aigc-09.jpg"></div>
+                        <div class="card" data-category="aigc"><img src="images/aigc/aigc-10.jpg"></div>
+                        <div class="card" data-category="aigc"><img src="images/aigc/aigc-11.jpg"></div>
+                        <div class="card" data-category="aigc"><img src="images/aigc/aigc-12.jpg"></div>
+                        <div class="card" data-category="aigc"><img src="images/aigc/aigc-13.jpg"></div>
+                        <div class="card" data-category="aigc"><img src="images/aigc/aigc-14.jpg"></div>
+                        <div class="card" data-category="aigc"><img src="images/aigc/aigc-15.jpg"></div>
+                        <div class="card" data-category="aigc"><img src="images/aigc/aigc-16.jpg"></div>
+                        <div class="card" data-category="aigc"><img src="images/aigc/aigc-17.jpg"></div>
+                        <div class="card" data-category="aigc"><img src="images/aigc/aigc-18.jpg"></div>
+                        <div class="card" data-category="aigc"><img src="images/aigc/aigc-19.jpg"></div>
+                        <div class="card" data-category="aigc"><img src="images/aigc/aigc-20.jpg"></div>
+                        <div class="card" data-category="aigc"><img src="images/aigc/aigc-21.jpg"></div>
+                        <div class="card" data-category="aigc"><img src="images/aigc/aigc-22.jpg"></div>
+                        <div class="card" data-category="aigc"><img src="images/aigc/aigc-23.jpg"></div>
+                        <div class="card" data-category="aigc"><img src="images/aigc/aigc-24.jpg"></div>
+                        <div class="card" data-category="aigc"><img src="images/aigc/aigc-25.jpg"></div>
+                        <div class="card" data-category="aigc"><img src="images/aigc/aigc-26.jpg"></div>
+                        <div class="card" data-category="aigc"><img src="images/aigc/aigc-27.jpg"></div>
+                        <div class="card" data-category="aigc"><img src="images/aigc/aigc-28.jpg"></div>
+
+                        <div class="card" data-category="graphic"><img src="images/graphic/graphic-01.jpg"></div>
+                        <div class="card" data-category="graphic"><img src="images/graphic/graphic-02.jpg"></div>
+                        <div class="card" data-category="graphic"><img src="images/graphic/graphic-03.jpg"></div>
+                        <div class="card" data-category="graphic"><img src="images/graphic/graphic-04.jpg"></div>
+                        <div class="card" data-category="graphic"><img src="images/graphic/graphic-05.jpg"></div>
+                        <div class="card" data-category="graphic"><img src="images/graphic/graphic-06.jpg"></div>
+                        <div class="card" data-category="graphic"><img src="images/graphic/graphic-07.jpg"></div>
+                        <div class="card" data-category="graphic"><img src="images/graphic/graphic-08.jpg"></div>
+                        <div class="card" data-category="graphic"><img src="images/graphic/graphic-09.jpg"></div>
+                        <div class="card" data-category="graphic"><img src="images/graphic/graphic-10.jpg"></div>
+                        <div class="card" data-category="graphic"><img src="images/graphic/graphic-11.jpg"></div>
+                        <div class="card" data-category="graphic"><img src="images/graphic/graphic-12.jpg"></div>
+                        <div class="card" data-category="graphic"><img src="images/graphic/graphic-13.jpg"></div>
+                        <div class="card" data-category="graphic"><img src="images/graphic/graphic-14.jpg"></div>
+                        <div class="card" data-category="graphic"><img src="images/graphic/graphic-15.jpg"></div>
+                        <div class="card" data-category="graphic"><img src="images/graphic/graphic-16.jpg"></div>
+                        <div class="card" data-category="graphic"><img src="images/graphic/graphic-17.jpg"></div>
+                        <div class="card" data-category="graphic"><img src="images/graphic/graphic-18.jpg"></div>
+                        <div class="card" data-category="graphic"><img src="images/graphic/graphic-19.jpg"></div>
+                        <div class="card" data-category="graphic"><img src="images/graphic/graphic-20.jpg"></div>
+                        <div class="card" data-category="graphic"><img src="images/graphic/graphic-21.jpg"></div>
+                        <div class="card" data-category="graphic"><img src="images/graphic/graphic-22.jpg"></div>
+                        <div class="card" data-category="graphic"><img src="images/graphic/graphic-23.jpg"></div>
+                        <div class="card" data-category="graphic"><img src="images/graphic/graphic-24.jpg"></div>
+                        <div class="card" data-category="graphic"><img src="images/graphic/graphic-25.jpg"></div>
+                        <div class="card" data-category="graphic"><img src="images/graphic/graphic-26.jpg"></div>
+                        <div class="card" data-category="graphic"><img src="images/graphic/graphic-27.jpg"></div>
+                        <div class="card" data-category="graphic"><img src="images/graphic/graphic-28.jpg"></div>
+                        <div class="card" data-category="graphic"><img src="images/graphic/graphic-29.jpg"></div>
+                        <div class="card" data-category="graphic"><img src="images/graphic/graphic-30.jpg"></div>
+                        <div class="card" data-category="graphic"><img src="images/graphic/graphic-31.jpg"></div>
+                        <div class="card" data-category="graphic"><img src="images/graphic/graphic-32.jpg"></div>
+                        <div class="card" data-category="graphic"><img src="images/graphic/graphic-33.jpg"></div>
+                        <div class="card" data-category="graphic"><img src="images/graphic/graphic-34.jpg"></div>
+                        <div class="card" data-category="graphic"><img src="images/graphic/graphic-35.jpg"></div>
+                        <div class="card" data-category="graphic"><img src="images/graphic/graphic-36.jpg"></div>
+                        <div class="card" data-category="graphic"><img src="images/graphic/graphic-37.jpg"></div>
+                        <div class="card" data-category="graphic"><img src="images/graphic/graphic-38.jpg"></div>
+                        <div class="card" data-category="graphic"><img src="images/graphic/graphic-39.jpg"></div>
+                        <div class="card" data-category="graphic"><img src="images/graphic/graphic-40.jpg"></div>
+                        <div class="card" data-category="graphic"><img src="images/graphic/graphic-41.jpg"></div>
+                        <div class="card" data-category="graphic"><img src="images/graphic/graphic-42.jpg"></div>
+                        <div class="card" data-category="graphic"><img src="images/graphic/graphic-43.jpg"></div>
+                        <div class="card" data-category="graphic"><img src="images/graphic/graphic-44.jpg"></div>
+                        <div class="card" data-category="graphic"><img src="images/graphic/graphic-45.jpg"></div>
+                        <div class="card" data-category="graphic"><img src="images/graphic/graphic-46.jpg"></div>
+                        <div class="card" data-category="graphic"><img src="images/graphic/graphic-47.jpg"></div>
+                        <div class="card" data-category="graphic"><img src="images/graphic/graphic-48.jpg"></div>
+                        <div class="card" data-category="graphic"><img src="images/graphic/graphic-49.jpg"></div>
+                        <div class="card" data-category="graphic"><img src="images/graphic/graphic-50.jpg"></div>
+                        <div class="card" data-category="graphic"><img src="images/graphic/graphic-51.jpg"></div>
+                        <div class="card" data-category="graphic"><img src="images/graphic/graphic-52.jpg"></div>
+                        <div class="card" data-category="graphic"><img src="images/graphic/graphic-53.jpg"></div>
+                        <div class="card" data-category="graphic"><img src="images/graphic/graphic-54.jpg"></div>
+                        <div class="card" data-category="graphic"><img src="images/graphic/graphic-55.jpg"></div>
+                        <div class="card" data-category="graphic"><img src="images/graphic/graphic-56.jpg"></div>
+                        <div class="card" data-category="graphic"><img src="images/graphic/graphic-57.jpg"></div>
+                        <div class="card" data-category="graphic"><img src="images/graphic/graphic-58.jpg"></div>
+                        <div class="card" data-category="graphic"><img src="images/graphic/graphic-59.jpg"></div>
+                        <div class="card" data-category="graphic"><img src="images/graphic/graphic-60.jpg"></div>
+                        <div class="card" data-category="graphic"><img src="images/graphic/graphic-61.jpg"></div>
+                        <div class="card" data-category="graphic"><img src="images/graphic/graphic-62.jpg"></div>
+                        <div class="card" data-category="graphic"><img src="images/graphic/graphic-63.jpg"></div>
+                        <div class="card" data-category="graphic"><img src="images/graphic/graphic-64.jpg"></div>
+                        <div class="card" data-category="graphic"><img src="images/graphic/graphic-65.jpg"></div>
+                        <div class="card" data-category="graphic"><img src="images/graphic/graphic-66.jpg"></div>
+                        <div class="card" data-category="graphic"><img src="images/graphic/graphic-67.jpg"></div>
+
+                        <div class="card" data-category="detail"><img src="images/detail/detail-01.jpg"></div>
+                        <div class="card" data-category="detail"><img src="images/detail/detail-02.jpg"></div>
+                        <div class="card" data-category="detail"><img src="images/detail/detail-03.jpg"></div>
+                        <div class="card" data-category="detail"><img src="images/detail/detail-04.jpg"></div>
+                        <div class="card" data-category="detail"><img src="images/detail/detail-05.jpg"></div>
+                    </div>
+
+                    <div class="load-more-container" id="loadMoreContainer">
+                        <button class="load-more-btn" id="loadMoreBtn">查看该分类全部画册 / View More</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="section-page about-section">
+        <h2 class="about-out-title">关于我</h2>
+        <div class="about-container-box">
+            <div class="about-avatar-box">
+                <div class="about-avatar-placeholder">WZH</div>
+            </div>
+            <div class="about-content">
+                <div class="about-header-group">
+                    <h3 class="about-main-title">温志豪</h3>
+                    <div class="about-sub-title">DESIGN PHILOSOPHY</div>
+                    <div class="about-title-line"></div>
+                </div>
+                <p class="about-core-text">
+                    熟练掌握 <strong>PS</strong>、<strong>C4D/OC</strong>、<strong>KeyShot</strong> 及 <strong>AIGC工具</strong>，擅长全链路创意三维渲染艺术与视觉设计。
+                </p>
+                <ul class="about-points-list">
+                    <li class="about-point-item"><div class="about-point-dot"></div><span>8年电商视觉设计深厚沉淀，擅长全链路视觉设计，兼具渲染团队管理协作能力。</span></li>
+                    <li class="about-point-item"><div class="about-point-dot"></div><span>聚焦3C、车载、小家电品类，可独立完成创意—建模—渲染—精修—排版全流程。</span></li>
+                    <li class="about-point-item"><div class="about-point-dot"></div><span>期间曾打造多款爆款，曾助力车载充气泵、磁吸支架等多款项目斩获类目Top1。</span></li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section id="experience" class="section-page">
+        <h2 class="section-title">工作经历</h2>
+        <div class="experience-list">
+            <div class="experience-card">
+                <div class="job">
+                    <div class="exp-header-center">
+                        <div class="company-name">深圳市卡斐乐科技有限公司</div>
+                        <div class="year">2019.04 - 2026.06</div>
+                        <h3>高级视觉设计师<span class="exp-sub-title">/兼渲染组长</span></h3>
+                    </div>
+                    <div class="biz-summary">
+                        <strong>主营品类：</strong>3C数码、车载、便携小家电品类，涵盖车载支架、充电/数据线、充气泵、搭电宝、遮阳挡、洗车机及便携风扇等。
+                    </div>
+                    <ul class="duty-list">
+                        <li>负责天猫电商平台主视觉设计，包括主图、详情页、活动页等视觉输出，精准提炼卖点，输出高效视觉方案。</li>
+                        <li>负责产品三维建模、场景渲染、后期精修与合成全流程；持续迭代老品视觉，提升页面点击率与转化率。</li>
+                        <li>担任渲染组长，兼具渲染团队管理协作能力，实现团队高效高质产出。</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="experience-card">
+                <div class="job">
+                    <div class="exp-header-center">
+                        <div class="company-name">深圳市景永盛有限公司</div>
+                        <div class="year">2018.05 - 2019.03</div>
+                        <h3>平面设计师</h3>
+                    </div>
+                    <div class="biz-summary" style="color: #6ea8ff; background: rgba(110, 168, 255, 0.06); border: 1px solid rgba(110, 168, 255, 0.15);">
+                        <strong>主营业务：</strong>3C数码及周边消费电子产品，聚焦于主流电商平台的基础视觉搭建与营销素材输出。
+                    </div>
+                    <ul class="duty-list">
+                        <li>负责产品主图、详情页、SKU、活动海报等各类视觉设计输出。</li>
+                        <li>与摄影/运营团队紧密对接，深入了解产品卖点，确保视觉传达精准高效。</li>
+                        <li>具备较强的团队协作意识，能够在多任务并行环境下保证交付质量与时效。</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="section-page">
+        <div class="contact-container">
+            <h2 class="section-title" style="margin-bottom:20px;">联系方式</h2>
+            <div class="contact-card">
+                <div class="contact-info">
+                    <div class="contact-item"><span>微信</span><p>wen1036614185</p></div>
+                    <div class="contact-item"><span>邮箱</span><p>1036614185@qq.com</p></div>
+                </div>
+                <a class="back-to-top" id="backToTopBtn">Back to Top ↑</a>
+            </div>
+            <footer class="footer"><p>© 2026 WEN ZHIHAO PORTFOLIO</p></footer>
+        </div>
+    </section>
+
+</div>
+
+<script>
+// 全屏滚动控制
+let currentStage = 0;
+const totalStages = 5;
+const container = document.getElementById('mainContainer');
+const worksScroll = document.getElementById('worksScroll');
+let isScrolling = false;
+
+function goToStage(stageIndex) {
+    if (stageIndex < 0 || stageIndex >= totalStages) return;
+    currentStage = stageIndex;
+    container.style.transform = `translateY(-${currentStage * 100}vh)`;
+    
+    document.querySelectorAll('.menu a').forEach(a => a.classList.remove('active'));
+    document.querySelectorAll('.dot').forEach(d => d.classList.remove('active'));
+    
+    const activeNav = document.querySelector(`.menu a[data-target="${currentStage}"]`);
+    const activeDot = document.querySelector(`.dot[data-target="${currentStage}"]`);
+    if(activeNav) activeNav.classList.add('active');
+    if(activeDot) activeDot.classList.add('active');
+}
+
+window.addEventListener('wheel', (e) => {
+    if (window.innerWidth <= 768) return;
+    if (isScrolling) return;
+    if (document.getElementById('globalLightbox').classList.contains('active')) return;
+    if (document.getElementById('categoryModal').classList.contains('active')) return;
+
+    if (currentStage === 1) {
+        const scrollTop = worksScroll.scrollTop;
+        const scrollHeight = worksScroll.scrollHeight;
+        const clientHeight = worksScroll.clientHeight;
+        if (e.deltaY > 0 && scrollTop + clientHeight < scrollHeight - 5) return; 
+        if (e.deltaY < 0 && scrollTop > 5) return; 
+    }
+
+    isScrolling = true;
+    if (e.deltaY > 0) {
+        if (currentStage < totalStages - 1) goToStage(currentStage + 1);
+    } else {
+        if (currentStage > 0) goToStage(currentStage - 1);
+    }
+    setTimeout(() => { isScrolling = false; }, 550);
+}, { passive: false });
+
+document.querySelectorAll('.menu a, .dot').forEach(element => {
+    element.addEventListener('click', () => {
+        const target = parseInt(element.getAttribute('data-target'));
+        goToStage(target);
+    });
+});
+
+document.getElementById('exploreBtn').addEventListener('click', () => goToStage(1));
+document.getElementById('backToTopBtn').addEventListener('click', (e) => { e.preventDefault(); goToStage(0); });
+
+
+// 作品网格过滤管理
+const buttons = document.querySelectorAll('.filter-btn');
+const cards = Array.from(document.querySelectorAll('.card'));
+const gallery = document.getElementById('worksGallery');
+const galleryWrapper = document.getElementById('galleryWrapper');
+const loadMoreContainer = document.getElementById('loadMoreContainer');
+const loadMoreBtn = document.getElementById('loadMoreBtn');
+
+let currentFilter = '3d'; 
+
+const categoryOrder = ['3d', 'aigc', 'graphic', 'detail'];
+const categoryNameMap = { '3d': '三维渲染', 'aigc': 'AIGC生成', 'graphic': '平面作品', 'detail': '产品详情' };
+
+function renderWorks() {
+    galleryWrapper.classList.add('gallery-wrapper--limit');
+    loadMoreContainer.style.display = 'flex';
+
+    cards.forEach(card => {
+        const category = card.dataset.category;
+        if (category === currentFilter) {
+            card.classList.remove('card--hidden');
+        } else {
+            card.classList.add('card--hidden');
+        }
+    });
+}
+
+buttons.forEach(btn => {
+    btn.addEventListener('click', () => {
+        buttons.forEach(item => item.classList.remove('active'));
+        btn.classList.add('active');
+        currentFilter = btn.dataset.filter;
+        worksScroll.scrollTop = 0; 
+        renderWorks();
+    });
+});
+
+loadMoreBtn.addEventListener('click', () => {
+    openCategoryModal(currentFilter);
+});
+
+
+// 无损超清大图预览核心池
+const lightbox = document.getElementById('globalLightbox');
+const lightboxImg = document.getElementById('lightboxImg');
+const lightboxWrapper = document.getElementById('lightboxWrapper');
+const lightboxClose = document.getElementById('lightboxClose');
+const lightboxPrev = document.getElementById('lightboxPrev');
+const lightboxNext = document.getElementById('lightboxNext');
+const scaleBadge = document.getElementById('lightboxScaleBadge');
+const lightboxCategoryTag = document.getElementById('lightboxCategoryTag');
+const lightboxCounter = document.getElementById('lightboxCounter');
+
+let scale = 1;
+let imgX = 0;
+let imgY = 0;
+let isDragging = false;
+let startX = 0;
+let startY = 0;
+const globalFullImagePool = cards; 
+let currentActiveIndex = 0;        
+
+function updateScaleLabel() {
+    if(scaleBadge) scaleBadge.innerText = Math.round(scale * 100) + "%";
+}
+
+function updateImgTransform() {
+    lightboxImg.style.transform = `translate3d(${imgX}px, ${imgY}px, 0px) scale(${scale})`;
+}
+
+function loadLightboxImgByIndex(index) {
+    if(index < 0 || index >= globalFullImagePool.length) return;
+    currentActiveIndex = index;
+    const targetCard = globalFullImagePool[index];
+    const imgSrc = targetCard.querySelector('img').getAttribute('src');
+
+    const category = targetCard.dataset.category;
+    const categoryName = categoryNameMap[category] || category;
+    const sameCategory = globalFullImagePool.filter(c => c.dataset.category === category);
+    const indexInCategory = sameCategory.indexOf(targetCard) + 1;
+    
+    if (lightboxCategoryTag) lightboxCategoryTag.textContent = categoryName;
+    if (lightboxCounter) lightboxCounter.textContent = indexInCategory + ' / ' + sameCategory.length;
+    
+    lightboxImg.style.opacity = '0';
+    lightboxImg.setAttribute('src', '');
+    
+    const tempImg = new Image();
+    tempImg.src = imgSrc;
+    tempImg.onload = function() {
+        lightboxImg.setAttribute('src', imgSrc);
+        const naturalW = tempImg.naturalWidth;
+        const naturalH = tempImg.naturalHeight;
+        
+        lightboxImg.style.width = naturalW + 'px';
+        lightboxImg.style.height = naturalH + 'px';
+        
+        const winW = window.innerWidth * 0.9;
+        const winH = window.innerHeight * 0.85;
+        scale = Math.min(winW / naturalW, winH / naturalH, 1); 
+        imgX = 0; imgY = 0;
+        updateImgTransform();
+        updateScaleLabel();
+        lightboxImg.style.opacity = '1';
+    };
+}
+
+function switchImage(direction) {
+    const sameCategoryCards = globalFullImagePool.filter(c => c.dataset.category === currentFilter);
+    let currentSubIndex = sameCategoryCards.indexOf(globalFullImagePool[currentActiveIndex]);
+    let nextSubIndex = currentSubIndex + direction;
+    
+    if (nextSubIndex >= 0 && nextSubIndex < sameCategoryCards.length) {
+        const targetCard = sameCategoryCards[nextSubIndex];
+        const absoluteIndex = globalFullImagePool.indexOf(targetCard);
+        loadLightboxImgByIndex(absoluteIndex);
+    } else {
+        let currentFilterIndex = categoryOrder.indexOf(currentFilter);
+        let nextFilterIndex = currentFilterIndex + direction;
+        
+        if (nextFilterIndex >= categoryOrder.length) nextFilterIndex = 0;
+        if (nextFilterIndex < 0) nextFilterIndex = categoryOrder.length - 1;
+        
+        const nextFilter = categoryOrder[nextFilterIndex];
+        currentFilter = nextFilter;
+        
+        buttons.forEach(btn => {
+            if (btn.dataset.filter === nextFilter) {
+                buttons.forEach(item => item.classList.remove('active'));
+                btn.classList.add('active');
+            }
+        });
+        renderWorks(); 
+        
+        const nextCategoryCards = globalFullImagePool.filter(c => c.dataset.category === nextFilter);
+        let targetCard;
+        if (direction > 0) {
+            targetCard = nextCategoryCards[0]; 
+        } else {
+            targetCard = nextCategoryCards[nextCategoryCards.length - 1]; 
+        }
+        
+        const absoluteIndex = globalFullImagePool.indexOf(targetCard);
+        loadLightboxImgByIndex(absoluteIndex);
+    }
+}
+
+cards.forEach((card) => {
+    card.addEventListener('click', () => {
+        const absoluteIndex = globalFullImagePool.indexOf(card);
+        if (absoluteIndex !== -1) {
+            loadLightboxImgByIndex(absoluteIndex);
+            lightbox.classList.add('active');
+        }
+    });
+});
+
+lightboxPrev.addEventListener('click', (e) => { e.stopPropagation(); switchImage(-1); });
+lightboxNext.addEventListener('click', (e) => { e.stopPropagation(); switchImage(1); });
+
+window.addEventListener('keydown', (e) => {
+    if (lightbox.classList.contains('active')) {
+        if (e.key === 'ArrowLeft') switchImage(-1);
+        if (e.key === 'ArrowRight') switchImage(1);
+        if (e.key === 'Escape') closeLightbox();
+    } else if (document.getElementById('categoryModal').classList.contains('active')) {
+        if (e.key === 'ArrowLeft') switchCategory(-1); 
+        if (e.key === 'ArrowRight') switchCategory(1); 
+        if (e.key === 'Escape') closeCategoryModal();
+    }
+});
+
+lightbox.addEventListener('wheel', (e) => {
+    if (!lightbox.classList.contains('active')) return;
+    e.preventDefault();
+
+    const zoomIntensity = 0.12;
+    const delta = e.deltaY < 0 ? 1 : -1;
+    const prevScale = scale;
+    
+    scale += delta * zoomIntensity * scale;
+    scale = Math.max(0.2, Math.min(6, scale)); 
+
+    imgX = imgX * (scale / prevScale);
+    imgY = imgY * (scale / prevScale);
+
+    updateImgTransform();
+    updateScaleLabel(); 
+}, { passive: false });
+
+lightboxWrapper.addEventListener('mousedown', (e) => {
+    if (!lightbox.classList.contains('active')) return;
+    isDragging = true;
+    startX = e.clientX - imgX;
+    startY = e.clientY - imgY;
+});
+
+window.addEventListener('mousemove', (e) => {
+    if (!isDragging) return;
+    imgX = e.clientX - startX;
+    imgY = e.clientY - startY;
+    updateImgTransform();
+});
+
+window.addEventListener('mouseup', () => { isDragging = false; });
+lightboxImg.addEventListener('dblclick', (e) => { e.stopPropagation(); loadLightboxImgByIndex(currentActiveIndex); });
+
+function closeLightbox() { lightbox.classList.remove('active'); }
+lightboxClose.addEventListener('click', closeLightbox);
+lightbox.addEventListener('click', (e) => {
+    if (e.target === lightbox || e.target === lightboxClose || e.target === lightboxWrapper) closeLightbox();
+});
+
+
+// 弹出分类全览新浮窗核心逻辑 (大画幅瀑布流)
+let modalCurrentFilter = '';
+
+function openCategoryModal(filter) {
+    modalCurrentFilter = filter;
+    const modal = document.getElementById('categoryModal');
+    rebuildModalContent();
+    modal.classList.add('active');
+}
+
+function rebuildModalContent() {
+    const modalTitle = document.getElementById('categoryModalTitle');
+    const modalGrid = document.getElementById('categoryModalGrid');
+
+    modalTitle.textContent = categoryNameMap[modalCurrentFilter] || modalCurrentFilter;
+    modalGrid.innerHTML = '';
+    
+    modalGrid.setAttribute('data-current', modalCurrentFilter);
+    
+    const categoryCards = cards.filter(c => c.dataset.category === modalCurrentFilter);
+    categoryCards.forEach((card) => {
+        const src = card.querySelector('img').getAttribute('src');
+        const thumb = document.createElement('div');
+        thumb.className = 'cm-thumb';
+        thumb.innerHTML = `<img src="${src}" draggable="false">`;
+        
+        thumb.addEventListener('click', () => {
+            const absoluteIndex = globalFullImagePool.indexOf(card);
+            if (absoluteIndex !== -1) {
+                loadLightboxImgByIndex(absoluteIndex);
+                lightbox.classList.add('active');
+            }
+        });
+        modalGrid.appendChild(thumb);
+    });
+}
+
+function switchCategory(direction) {
+    let currentIndex = categoryOrder.indexOf(modalCurrentFilter);
+    if (currentIndex === -1) return;
+
+    let nextIndex = currentIndex + direction;
+    if (nextIndex >= categoryOrder.length) nextIndex = 0;
+    if (nextIndex < 0) nextIndex = categoryOrder.length - 1;
+
+    modalCurrentFilter = categoryOrder[nextIndex];
+    
+    buttons.forEach(btn => {
+        if(btn.dataset.filter === modalCurrentFilter) {
+            buttons.forEach(item => item.classList.remove('active'));
+            btn.classList.add('active');
+            currentFilter = modalCurrentFilter;
+            renderWorks();
+        }
+    });
+
+    rebuildModalContent();
+    document.getElementById('categoryModalGrid').scrollTop = 0;
+}
+
+document.getElementById('categoryModalPrev').addEventListener('click', (e) => {
+    e.stopPropagation();
+    switchCategory(-1);
+});
+document.getElementById('categoryModalNext').addEventListener('click', (e) => {
+    e.stopPropagation();
+    switchCategory(1);
+});
+
+function closeCategoryModal() {
+    document.getElementById('categoryModal').classList.remove('active');
+}
+
+document.getElementById('categoryModalClose').addEventListener('click', closeCategoryModal);
+document.getElementById('categoryModal').addEventListener('click', (e) => {
+    if (e.target === document.getElementById('categoryModal') || e.target === document.querySelector('.cm-stage')) {
+        closeCategoryModal();
+    }
+});
+
+// 初始化启动
+cards.forEach(card => card.classList.add('card--hidden'));
+renderWorks();
+</script>
+</body>
+</html>
