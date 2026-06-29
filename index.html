@@ -6,6 +6,65 @@
 <title>温志豪 | 高级视觉设计师</title>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
+<style>
+    /* ==========================================================================
+       【精准工作区】仅修改产品详情分类，使其6张图横排合起来刚好占满 100% 宽度
+       ========================================================================== */
+
+    /* 1. 修正主页面详情横向：不换行，且整体总宽度正好是详情框的 100% */
+    .gallery.horizontal-detail-layout {
+        display: flex !important;
+        flex-direction: row !important;
+        flex-wrap: nowrap !important;
+        gap: 0px !important;         /* 填满总宽度时卡片间距设为0，实现无缝填满 */
+        padding-bottom: 20px !important;
+        width: 100% !important;      /* 整体队伍的总宽度占满 100% */
+        height: auto !important;
+    }
+    /* 核心：将 6 张详情图的每一张卡片精准设为 1/6 宽度，从而加在一起正好完美占满 100% 宽度 */
+    .horizontal-detail-layout .card {
+        flex: 0 0 calc(100% / 6) !important; /* 核心：6张图刚好平分并占满总宽度 */
+        width: calc(100% / 6) !important;
+        max-width: calc(100% / 6) !important;
+        height: auto !important;
+    }
+    .horizontal-detail-layout .card img {
+        width: 100% !important;     /* 图片宽度完美填满它的六分之一格子 */
+        height: auto !important;     /* 高度完全不受限制，自然向下延伸显示 */
+        display: block !important;
+    }
+
+    /* 2. 修正弹窗内详情横向：同理让弹窗里的 6 张图横排加起来也完美填满 100% 宽度 */
+    #categoryModalGrid[data-current="detail"] {
+        display: flex !important;
+        flex-direction: row !important;
+        flex-wrap: nowrap !important;
+        gap: 0px !important;
+        padding: 20px !important;
+        width: 100% !important;
+    }
+    /* 强行洗掉原本 style.css 里的 absolute 位移，让详情分类图在弹窗内也按 1/6 宽度平分占满 */
+    #categoryModalGrid[data-current="detail"] .cm-thumb {
+        position: relative !important; 
+        flex: 0 0 calc(100% / 6) !important; /* 弹窗内同样平分占满总宽度 */
+        width: calc(100% / 6) !important;
+        height: auto !important;
+        margin: 0 !important;
+        top: unset !important;
+        left: unset !important;
+        transform: none !important;
+    }
+    #categoryModalGrid[data-current="detail"] .cm-thumb img {
+        width: 100% !important;     /* 图片宽度占满格子 */
+        height: auto !important;
+        display: block !important;
+    }
+
+    /* 配合全屏滚动容器，确保横向正常响应 */
+    .works-scroll-wrapper {
+        overflow-x: auto !important;
+    }
+</style>
 </head>
 <body>
 
@@ -213,7 +272,6 @@
                         <div class="card" data-category="graphic"><img src="images/graphic/graphic-18.jpg"></div>
                         <div class="card" data-category="graphic"><img src="images/graphic/graphic-19.jpg"></div>
                         <div class="card" data-category="graphic"><img src="images/graphic/graphic-20.jpg"></div>
-                        <div class="card" data-category="graphic"><img src="images/graphic/graphic-21.jpg"></div>
                         <div class="card" data-category="graphic"><img src="images/graphic/graphic-22.jpg"></div>
                         <div class="card" data-category="graphic"><img src="images/graphic/graphic-23.jpg"></div>
                         <div class="card" data-category="graphic"><img src="images/graphic/graphic-24.jpg"></div>
@@ -289,7 +347,7 @@
             </div>
         </div>
     </section>
-
+    
     <section id="about" class="section-page about-section">
         <h2 class="about-out-title">关于我</h2>
         <div class="about-container-box">
@@ -346,7 +404,7 @@
                         <strong>主营业务：</strong>3C数码及周边消费电子产品，聚焦于主流电商平台的基础视觉搭建与营销素材输出。
                     </div>
                     <ul class="duty-list">
-                        <li>负责产品主图、详情页、SKU、活动海报等各类视觉设计输出。</li>
+                        <li>负责产品主图、详情页、SKU、活动海报等各类视觉设计输出.</li>
                         <li>与摄影/运营团队紧密对接，深入了解产品卖点，确保视觉传达精准高效。</li>
                         <li>具备较强的团队协作意识，能够在多任务并行环境下保证交付质量与时效。</li>
                     </ul>
@@ -443,6 +501,13 @@ const categoryNameMap = { '3d': '三维渲染', 'aigc': 'AIGC生成', 'graphic':
 function renderWorks() {
     galleryWrapper.classList.add('gallery-wrapper--limit');
     loadMoreContainer.style.display = 'flex';
+
+    // 检查是否为“详情”分类，如果是则添加横向布局类名
+    if (currentFilter === 'detail') {
+        gallery.classList.add('horizontal-detail-layout');
+    } else {
+        gallery.classList.remove('horizontal-detail-layout');
+    }
 
     cards.forEach(card => {
         const category = card.dataset.category;
@@ -665,7 +730,14 @@ function rebuildModalContent() {
         const src = card.querySelector('img').getAttribute('src');
         const thumb = document.createElement('div');
         thumb.className = 'cm-thumb';
-        thumb.innerHTML = `<img src="${src}" draggable="false">`;
+        
+        // 安全作用域保护：只有详情分类才做行内样式调整。另外三个分类彻底保持原汁原味，走你的 style.css 逻辑
+        if (modalCurrentFilter === 'detail') {
+            thumb.style.cssText = "position: relative !important; display: block !important; width: calc(100% / 6) !important; height: auto !important; margin: 0 !important; transform: none !important; top: unset !important; left: unset !important;";
+            thumb.innerHTML = `<img src="${src}" draggable="false" style="width:100% !important; height:auto !important; display:block !important;">`;
+        } else {
+            thumb.innerHTML = `<img src="${src}" draggable="false">`;
+        }
         
         thumb.addEventListener('click', () => {
             const absoluteIndex = globalFullImagePool.indexOf(card);
